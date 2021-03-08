@@ -10,12 +10,12 @@ const PostDetail = () => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
             .then(response => response.json())
             .then(json => setPost(json))
-    }, [])
+    }, [id])
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
             .then(response => response.json())
             .then(json => setComment(json))
-    }, [])
+    }, [id])
     return (
         <div>
             <h1>Headline: {post.title}</h1>
